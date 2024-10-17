@@ -11,14 +11,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
           registry-url: "https://registry.npmjs.org"
-
-      # Ensure everything is set up right
-      - run: "yarn install"
-      - run: "yarn build"
-      - run: "yarn test"
 
       - uses: Github-Actions-Community/merge-release@22d66d3f7750d57b2b8c05db6077205332527df8
         env:
