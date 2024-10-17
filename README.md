@@ -1,6 +1,6 @@
 ## Types for RevenueCat's webhooks
 
-Hand-crafted from their docs, and comprehensive.
+Hand-crafted from their docs, with JSDoc when appropriate and nullability manually added.
 
 ```ts
 import { Webhook } from "@puzzmo/revenue-cat-webhook-types"
