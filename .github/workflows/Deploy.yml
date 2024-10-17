@@ -19,6 +19,9 @@ jobs:
         with:
           registry-url: "https://registry.npmjs.org"
 
+      - run: |
+          git commit --allow-empty -m "feat(deploy): Release a new version"
+
       - uses: tobua/release-npm-action@v3
         with:
           MANUAL_TRIGGER: "regular"
