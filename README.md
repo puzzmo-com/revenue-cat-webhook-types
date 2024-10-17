@@ -20,4 +20,4 @@ const handler = (req: Webhook) => {
 
 ---
 
-Generally speaking, the types are nearly always the same across the webhooks, but it's good to have a centrally maintained source of truth for nullability until there are official types. [See here](https://community.revenuecat.com/sdks-51/type-definitions-for-webhook-events-4076).
+Generally speaking, the types are nearly always the same across the webhooks, but it's good to have a centrally maintained source of truth for nullability until there are official types. [See here](https://community.revenuecat.com/sdks-51/type-definitions-for-webhook-events-4076) for more discussion.
