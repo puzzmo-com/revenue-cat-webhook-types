@@ -1,0 +1,5 @@
+{
+  "name": "@puzzmo/revenue-cat-webhook-types",
+  "version": "0.0.1",
+  "description": "TypeScript types for RevenueCat Webhooks"
+}
