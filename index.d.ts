@@ -164,6 +164,8 @@ export interface WebhookTemporaryEntitlementGrant {
   transaction_id: string
 }
 
+// Helpers
+
 type Attributes = Record<
   string,
   {
