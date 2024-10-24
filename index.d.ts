@@ -152,6 +152,7 @@ export interface WebhookSubscriptionExtended extends WebhookBase {
  * the store servers, it contains less information than a regular purchase event.
  */
 export interface WebhookTemporaryEntitlementGrant {
+  type: "TEMPORARY_ENTITLEMENT_GRANT"
   app_user_id: string
   purchased_at_ms: number
   expiration_at_ms: number
