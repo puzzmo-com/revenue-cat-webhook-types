@@ -6,7 +6,7 @@ Hand-crafted from their docs, with JSDoc when appropriate and nullability manual
 import { Webhook } from "@puzzmo/revenue-cat-webhook-types"
 
 const handler = (req: Webhook) => {
-  switch (req.type) {
+  switch (req.event.type) {
     case "INITIAL_PURCHASE":
       // req as WebhookInitialPurchase
       break

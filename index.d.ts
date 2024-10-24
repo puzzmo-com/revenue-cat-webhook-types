@@ -9,18 +9,21 @@
  *
  * @see https://www.revenuecat.com/docs/integrations/webhooks/event-types-and-fields
  */
-export type Webhook =
-  | WebhookInitialPurchase
-  | WebhookRenewal
-  | WebhookCancellation
-  | WebhookUnCancellation
-  | WebhookNonRenewingPurchase
-  | WebhookExpiration
-  | WebhookSubscriptionPaused
-  | WebhookBillingIssue
-  | WebhookProductChange
-  | WebhookSubscriptionExtended
-  | WebhookTemporaryEntitlementGrant
+export type Webhook = {
+  api_version: string
+  event:
+    | WebhookInitialPurchase
+    | WebhookRenewal
+    | WebhookCancellation
+    | WebhookUnCancellation
+    | WebhookNonRenewingPurchase
+    | WebhookExpiration
+    | WebhookSubscriptionPaused
+    | WebhookBillingIssue
+    | WebhookProductChange
+    | WebhookSubscriptionExtended
+    | WebhookTemporaryEntitlementGrant
+}
 
 // Initially based on the samples from https://www.revenuecat.com/docs/integrations/webhooks/sample-events
 // There is generally a base object which most webhooks use, and then have a unique type and one-or-more unique fields.
@@ -48,6 +51,7 @@ interface WebhookBase {
   currency: string
   price: number
   price_in_purchased_currency: number
+  renewal_number: null | number
   subscriber_attributes: Attributes
   store: Store
   takehome_percentage?: number
@@ -126,7 +130,7 @@ export interface WebhookBillingIssue extends WebhookBase {
  */
 export interface WebhookProductChange extends WebhookBase {
   type: "PRODUCT_CHANGE"
-  new_product_id: string
+  new_product_id?: string
 }
 
 /**
