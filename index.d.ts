@@ -72,6 +72,7 @@ export interface WebhookInitialPurchase extends WebhookBase {
  */
 export interface WebhookRenewal extends WebhookBase {
   type: "RENEWAL"
+  is_trial_conversion: boolean
 }
 
 /**
@@ -176,14 +177,14 @@ export interface WebhookTemporaryEntitlementGrant {
  * event in both customer histories because the event body is exactly the same for both users.
  */
 export interface WebhookTransfer {
-    type: 'TRANSFER';
-    id: string;
-    app_id: string;
-    environment: Environment;
-    store: Store;
-    event_timestamp_ms: number;
-    transferred_from: string[],
-    transferred_to: string[],
+  type: "TRANSFER"
+  id: string
+  app_id: string
+  environment: Environment
+  store: Store
+  event_timestamp_ms: number
+  transferred_from: string[]
+  transferred_to: string[]
 }
 
 // Helpers
