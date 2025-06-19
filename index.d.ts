@@ -33,7 +33,6 @@ interface WebhookBase {
   id: string
   app_id: string
   event_timestamp_ms: number
-
   product_id: string
   period_type: string
   purchased_at_ms: number
@@ -59,6 +58,7 @@ interface WebhookBase {
   offer_code?: null | string
   tax_percentage?: number
   commission_percentage?: number
+  metadata: null | any
 }
 
 /** A new subscription has been purchased. */
