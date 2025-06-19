@@ -23,6 +23,7 @@ export type Webhook = {
     | WebhookProductChange
     | WebhookSubscriptionExtended
     | WebhookTemporaryEntitlementGrant
+    | WebhookTransfer
 }
 
 // Initially based on the samples from https://www.revenuecat.com/docs/integrations/webhooks/sample-events
@@ -167,6 +168,22 @@ export interface WebhookTemporaryEntitlementGrant {
   /** Note: the transaction_id might be different from the store's transaction_id present in a subsequent INITIAL_PURCHASE event;
    * depending on the store, the product_id might be different from the product_id present in the subsequent INITIAL_PURCHASE event */
   transaction_id: string
+}
+
+/**
+ * A transfer of transactions and entitlements was initiated between one App User ID(s) to another.
+ * Please note: The webhook will only be sent for the destination user despite us displaying this
+ * event in both customer histories because the event body is exactly the same for both users.
+ */
+export interface WebhookTransfer {
+    type: 'TRANSFER';
+    id: string;
+    app_id: string;
+    environment: Environment;
+    store: Store;
+    event_timestamp_ms: number;
+    transferred_from: string[],
+    transferred_to: string[],
 }
 
 // Helpers
