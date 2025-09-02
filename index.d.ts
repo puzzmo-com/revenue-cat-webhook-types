@@ -334,6 +334,8 @@ export interface WebhookTemporaryEntitlementGrant {
    * the store servers, it contains less information than a regular purchase event.
    */
   type: "TEMPORARY_ENTITLEMENT_GRANT"
+  /** Unique identifier of the event. */
+  id: string
   /**
    * Last seen app user id of the subscriber. Note: TRANSFER webhooks do not have an app_user_id.
    * Refer to {@link https://www.revenuecat.com/docs/integrations/webhooks/sample-events|the sample event} for the format.
