@@ -1,6 +1,6 @@
 {
   "name": "@puzzmo/revenue-cat-webhook-types",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "TypeScript types for RevenueCat Webhooks. Hand-crafted from their docs, with JSDoc when appropriate and nullability manually added.",
   "repository": {
     "url": "https://github.com/puzzmo-com/revenue-cat-webhook-types"
